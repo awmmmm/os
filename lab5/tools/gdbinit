@@ -1,0 +1,7 @@
+file bin/kernel
+target remote :1234
+break init_main
+display current->pid
+display current->tf
+c
+break user_main

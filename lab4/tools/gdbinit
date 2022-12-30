@@ -1,0 +1,9 @@
+file bin/kernel
+target remote :1234
+#break proc_init
+#b cpu_idle
+#display *(struct trapframe *) 0xc030bfb4
+#display (struct trapframe *) 0xc030bfb4
+#display $esp
+b schedule
+b proc_run

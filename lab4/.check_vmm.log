@@ -1,0 +1,52 @@
+(THU.CST) os is loading ...
+
+Special kernel symbols:
+  entry  0xc010002a (phys)
+  etext  0xc0109e98 (phys)
+  edata  0xc0124a90 (phys)
+  end    0xc0127c18 (phys)
+Kernel executable memory footprint: 159KB
+ebp:0xc0123f38 eip:0xc01009e7 args:0x00010094 0x00000000 0xc0123f68 0xc01000d3 
+    kern/debug/kdebug.c:308: print_stackframe+21
+ebp:0xc0123f48 eip:0xc0100cd6 args:0x00000000 0x00000000 0x00000000 0xc0123fb8 
+    kern/debug/kmonitor.c:129: mon_backtrace+10
+ebp:0xc0123f68 eip:0xc01000d3 args:0x00000000 0xc0123f90 0xffff0000 0xc0123f94 
+    kern/init/init.c:58: grade_backtrace2+33
+ebp:0xc0123f88 eip:0xc01000fc args:0x00000000 0xffff0000 0xc0123fb4 0x0000002a 
+    kern/init/init.c:63: grade_backtrace1+38
+ebp:0xc0123fa8 eip:0xc010011a args:0x00000000 0xc010002a 0xffff0000 0x0000001d 
+    kern/init/init.c:68: grade_backtrace0+23
+ebp:0xc0123fc8 eip:0xc010013f args:0xc0109ebc 0xc0109ea0 0x00003188 0x00000000 
+    kern/init/init.c:73: grade_backtrace+34
+ebp:0xc0123ff8 eip:0xc010007f args:0x00000000 0x00000000 0x0000ffff 0x40cf9a00 
+    kern/init/init.c:33: kern_init+84
+memory management: default_pmm_manager
+e820map:
+  memory: 0009fc00, [00000000, 0009fbff], type = 1.
+  memory: 00000400, [0009fc00, 0009ffff], type = 2.
+  memory: 00010000, [000f0000, 000fffff], type = 2.
+  memory: 07efe000, [00100000, 07ffdfff], type = 1.
+  memory: 00002000, [07ffe000, 07ffffff], type = 2.
+  memory: 00040000, [fffc0000, ffffffff], type = 2.
+check_alloc_page() succeeded!
+check_pgdir() succeeded!
+check_boot_pgdir() succeeded!
+-------------------- BEGIN --------------------
+PDE(0e0) c0000000-f8000000 38000000 urw
+  |-- PTE(38000) c0000000-f8000000 38000000 -rw
+PDE(001) fac00000-fb000000 00400000 -rw
+  |-- PTE(000e0) faf00000-fafe0000 000e0000 urw
+  |-- PTE(00001) fafeb000-fafec000 00001000 -rw
+--------------------- END ---------------------
+use SLOB allocator
+kmalloc_init() succeeded!
+check_vma_struct() succeeded!
+page fault at 0x00000100: K/W [no page found].
+check_pgfault() succeeded!
+check_vmm() succeeded.
+kernel panic at kern/process/proc.c:353:
+    create init_main failed.
+
+Welcome to the kernel debug monitor!!
+Type 'help' for a list of commands.
+K> 
